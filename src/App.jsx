@@ -125,8 +125,6 @@ function App() {
         setVisibleCount(1);
       } else if (width <= 1100) {
         setVisibleCount(2);
-      } else if (width >= 2560) {
-        setVisibleCount(4);
       } else {
         setVisibleCount(3);
       }

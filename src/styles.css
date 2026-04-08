@@ -125,12 +125,12 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
     position: absolute;
     inset: 0 0 auto 0;
     z-index: 3;
-    padding: 34px 36px 0;
+    padding: 69px 36px 0;
 }
 
 .service-card-icon {
-    width: 48px;
-    height: 48px;
+    width: 60px;
+    height: 60px;
     margin-bottom: 16px;
     object-fit: contain;
 }
@@ -138,7 +138,7 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 .service-card-eyebrow {
     margin: 0 0 12px;
     color: var(--gold-strong);
-    font-size: 9px;
+    font-size: 11.39px;
     font-weight: 700;
     letter-spacing: 0.26em;
     text-transform: uppercase;
@@ -159,14 +159,14 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
     margin: 0 0 20px;
     max-width: 84%;
     color: rgba(255, 255, 255, 0.72);
-    font-size: 14px;
+    font-size: 17.71px;
     line-height: 1.6;
 }
 
 .service-card-detail {
     margin: 0;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 11px;
+    font-size: 13.92px;
     font-weight: 600;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -221,18 +221,6 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
-/* 2560px+: 4 cards */
-@media (min-width: 2560px) {
-    :root {
-        --card-gap: 22px;
-    }
-
-    .service-card {
-        flex: 0 0 calc((100% - (var(--card-gap) * 3)) / 4);
-        min-width: calc((100% - (var(--card-gap) * 3)) / 4);
-    }
-}
-
 /* Tablet: 2 cards */
 @media (max-width: 1100px) {
     :root {
@@ -247,12 +235,12 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .service-card-content {
-        padding: 28px 26px 0;
+        padding: 63px 26px 0;
     }
 
     .service-card-icon {
-        width: 39px;
-        height: 39px;
+        width: 48.75px;
+        height: 48.75px;
     }
 
     .service-card-title {
@@ -319,12 +307,12 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .service-card-content {
-        padding: 52px 20px 0;
+        padding: 87px 20px 0;
     }
 
     .service-card-icon {
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
         margin-bottom: 12px;
     }
 
@@ -336,7 +324,7 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 
     .service-card-description {
         max-width: 92%;
-        font-size: 13px;
+        font-size: 14.3px;
         line-height: 1.55;
     }
 
