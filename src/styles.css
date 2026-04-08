@@ -262,7 +262,7 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 /* Mobile: 1 card */
 @media (max-width: 767px) {
     :root {
-        --shell-padding-x: 16px;
+        --shell-padding-x: 0px;
         --card-gap: 12px;
         --card-height: 582px;
     }
@@ -300,11 +300,6 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 
     .carousel-button-next {
         right: 6px;
-    }
-
-    .service-card {
-        flex: 0 0 96%;
-        min-width: 96%;
     }
 
     .service-card:hover {
