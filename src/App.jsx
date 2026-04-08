@@ -6,6 +6,19 @@ import service3 from "./assets/placeholders/service-3.png";
 import service4 from "./assets/placeholders/service-4.png";
 import service5 from "./assets/placeholders/service-5.png";
 import service6 from "./assets/placeholders/service-6.png";
+import service7 from "./assets/placeholders/service-7.png";
+import service8 from "./assets/placeholders/service-8.png";
+import service9 from "./assets/placeholders/service-9.png";
+
+import iconCommercialPainting from "./assets/icons/commercial-painting.png";
+import iconWallcovering from "./assets/icons/wallcovering.png";
+import iconLimewash from "./assets/icons/limewash.png";
+import iconIntumescent from "./assets/icons/intumescent.png";
+import iconEpoxy from "./assets/icons/epoxy.png";
+import iconVenetianPlaster from "./assets/icons/venetian-plaster.png";
+import iconAcoustic from "./assets/icons/acoustic.png";
+import iconFabricPanels from "./assets/icons/fabric-panels.png";
+import iconIdeaPaint from "./assets/icons/idea-paint.png";
 
 const services = [
   {
@@ -15,6 +28,7 @@ const services = [
     description:
       "High-end interior and exterior painting solutions for commercial environments.",
     detail: "Interior & Exterior",
+    icon: iconCommercialPainting,
     image: service1,
   },
   {
@@ -24,6 +38,7 @@ const services = [
     description:
       "Expert wallcovering applications that bring texture, depth, and refinement to a space.",
     detail: "Residential & Commercial",
+    icon: iconWallcovering,
     image: service2,
   },
   {
@@ -33,15 +48,17 @@ const services = [
     description:
       "Soft movement, depth, and character through premium limewash applications.",
     detail: "Natural Mineral Application",
+    icon: iconLimewash,
     image: service3,
   },
   {
     id: 4,
-    eyebrow: "Surface Protection",
-    title: "Industrial Coatings",
+    eyebrow: "Safety Performance",
+    title: "Intumescent Coatings",
     description:
-      "Durable coating systems designed for demanding industrial and commercial conditions.",
-    detail: "High-Traffic & Heavy-Duty",
+      "Specialized fire-retardant coatings designed to protect structural steel while maintaining architectural design integrity.",
+    detail: "Fire-Rated & Certified",
+    icon: iconIntumescent,
     image: service4,
   },
   {
@@ -51,16 +68,48 @@ const services = [
     description:
       "Resilient floor systems engineered for performance, durability, and visual impact.",
     detail: "Seamless & Chemical-Resistant",
+    icon: iconEpoxy,
     image: service5,
   },
   {
     id: 6,
-    eyebrow: "Architectural Detail",
-    title: "Decorative Finishes",
+    eyebrow: "Artisanal Mastery",
+    title: "Venetian Plaster",
     description:
-      "Elevated specialty finishes crafted to create distinctive commercial interiors.",
-    detail: "Custom & Bespoke",
+      "Multi-layered artisan plastering polished to a high-sheen marble-like finish, creating unparalleled luxury and light play.",
+    detail: "Polished & Matte Options",
+    icon: iconVenetianPlaster,
     image: service6,
+  },
+  {
+    id: 7,
+    eyebrow: "Sound Optimization",
+    title: "Acoustic Panels",
+    description:
+      "Engineered acoustic solutions that balance performance and aesthetics for commercial spaces.",
+    detail: "Custom Shapes & Finishes",
+    icon: iconAcoustic,
+    image: service7,
+  },
+  {
+    id: 8,
+    eyebrow: "Wall Systems",
+    title: "Fabric Wrapped Panels",
+    description:
+      "Bespoke textile wall systems providing superior sound control and a soft, architectural finish to high-traffic areas.",
+    detail: "Acoustic & Decorative",
+    icon: iconFabricPanels,
+    image: service8,
+  },
+  {
+    id: 9,
+    eyebrow: "Brainstorming Spaces",
+    title: "Idea Paint",
+    description:
+      "Writable surface coatings that transform walls into functional, collaborative workspaces.",
+    detail: "Dry-Erase & Magnetic",
+    icon: iconIdeaPaint,
+    image: service9,
   },
 ];
 
@@ -154,6 +203,15 @@ function App() {
                     <div className="service-card-gradient" />
 
                     <div className="service-card-content">
+                      {service.icon && (
+                        <img
+                          src={service.icon}
+                          alt=""
+                          className="service-card-icon"
+                          aria-hidden="true"
+                        />
+                      )}
+
                       <p className="service-card-eyebrow">{service.eyebrow}</p>
 
                       <h2 className="service-card-title">{service.title}</h2>
