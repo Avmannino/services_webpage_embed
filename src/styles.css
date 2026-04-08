@@ -11,7 +11,7 @@
     --gold-hover: rgba(216, 177, 78, 0.08);
     --card-gap: 18px;
     --shell-padding-x: 72px;
-    --card-height: 552px;
+    --card-height: 635px;
     --section-width: 100%;
 }
 
@@ -67,9 +67,15 @@ button {
     gap: 14px;
 }
 
-.carousel-area {
+.carousel-clip {
     flex: 1;
-    overflow: hidden;
+    overflow-x: clip;
+    padding: 12px 10px;
+    margin: 0 -10px;
+}
+
+.carousel-area {
+    overflow: visible;
 }
 
 .carousel-track {
@@ -85,16 +91,17 @@ button {
     min-width: calc((100% - (var(--card-gap) * 2)) / 3);
     height: var(--card-height);
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 50px;
     background-color: #171717;
     background-size: cover;
     background-position: center center;
     isolation: isolate;
+    box-shadow: 0 4px 24px rgba(120, 120, 120, 0.25);
     transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .service-card:hover {
-    transform: scale(1.03) translateY(-4px);
+    transform: scale(1.015) translateY(-2px);
 }
 
 .service-card::after {
@@ -213,7 +220,7 @@ button {
     :root {
         --shell-padding-x: 40px;
         --card-gap: 16px;
-        --card-height: 500px;
+        --card-height: 575px;
     }
 
     .service-card {
@@ -246,7 +253,7 @@ button {
     :root {
         --shell-padding-x: 16px;
         --card-gap: 12px;
-        --card-height: 460px;
+        --card-height: 529px;
     }
 
     .services-section {
@@ -267,7 +274,7 @@ button {
     }
 
     .service-card-content {
-        padding: 22px 20px 0;
+        padding: 52px 20px 0;
     }
 
     .service-card-title {

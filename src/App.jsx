@@ -137,6 +137,7 @@ function App() {
               </svg>
             </button>
 
+            <div className="carousel-clip">
             <div className="carousel-area" id="services-carousel">
               <div
                 className="carousel-track"
@@ -169,6 +170,7 @@ function App() {
                 ))}
 
               </div>
+            </div>
             </div>
 
             <button
