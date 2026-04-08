@@ -264,7 +264,7 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
     :root {
         --shell-padding-x: 16px;
         --card-gap: 12px;
-        --card-height: 529px;
+        --card-height: 582px;
     }
 
     .services-section {
@@ -272,12 +272,31 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .carousel-wrapper {
-        gap: 10px;
+        gap: 0;
+    }
+
+    .carousel-clip {
+        flex: 1;
+    }
+
+    .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+    .carousel-button-prev {
+        left: 6px;
+    }
+
+    .carousel-button-next {
+        right: 6px;
     }
 
     .service-card {
-        flex: 0 0 100%;
-        min-width: 100%;
+        flex: 0 0 96%;
+        min-width: 96%;
     }
 
     .service-card:hover {
