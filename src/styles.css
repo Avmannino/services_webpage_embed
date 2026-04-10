@@ -221,6 +221,13 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
+/* 1470px breakpoint: shorter cards */
+@media (max-width: 1500px) and (min-width: 1101px) {
+    :root {
+        --card-height: 567px;
+    }
+}
+
 /* Tablet: 2 cards */
 @media (max-width: 1100px) {
     :root {
