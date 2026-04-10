@@ -64,7 +64,7 @@ button {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 28px;
 }
 
 .carousel-clip {
@@ -181,8 +181,8 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 
 .carousel-button {
     flex-shrink: 0;
-    width: 56px;
-    height: 56px;
+    width: 67px;
+    height: 67px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -216,8 +216,8 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .carousel-button svg {
-    width: 24px;
-    height: 24px;
+    width: 29px;
+    height: 29px;
 }
 
 
@@ -256,13 +256,13 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .carousel-button {
-        width: 48px;
-        height: 48px;
+        width: 58px;
+        height: 58px;
     }
 
     .carousel-button svg {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
     }
 }
 
@@ -278,10 +278,6 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
         padding: 16px 0 24px;
     }
 
-    .carousel-wrapper {
-        gap: 0;
-    }
-
     .carousel-clip {
         flex: 1;
         overflow: hidden;
@@ -292,21 +288,6 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
     .service-card {
         flex: 0 0 100%;
         min-width: 100%;
-    }
-
-    .carousel-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-    }
-
-    .carousel-button-prev {
-        left: 6px;
-    }
-
-    .carousel-button-next {
-        right: 6px;
     }
 
     .service-card:hover {
@@ -336,12 +317,34 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .carousel-button {
-        width: 44px;
-        height: 44px;
+        width: 53px;
+        height: 53px;
     }
 
     .carousel-button svg {
-        width: 18px;
-        height: 18px;
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* Mobile: buttons overlay inside card */
+@media (max-width: 500px) {
+    .carousel-wrapper {
+        gap: 0;
+    }
+
+    .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+    .carousel-button-prev {
+        left: 6px;
+    }
+
+    .carousel-button-next {
+        right: 6px;
     }
 }
