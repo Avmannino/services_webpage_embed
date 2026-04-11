@@ -29,7 +29,6 @@ import iconAcoustic from "./assets/icons/acoustic.png";
 import iconFabricPanels from "./assets/icons/fabric-panels.png";
 import iconIdeaPaint from "./assets/icons/idea-paint.png";
 
-
 const services = [
   {
     id: 1,
@@ -161,7 +160,7 @@ function App() {
       const root = document.documentElement;
 
       if (width >= 2520) {
-        root.style.setProperty("--shell-padding-x", "500px");
+        root.style.setProperty("--shell-padding-x", "425px");
       } else if (width <= 1100) {
         root.style.setProperty("--shell-padding-x", "40px");
       } else {

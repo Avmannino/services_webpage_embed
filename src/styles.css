@@ -384,6 +384,6 @@ button {
 /* Large desktop / Wix 2560 breakpoint */
 @media (min-width: 2520px) {
     :root {
-        --shell-padding-x: 500px;
+        --shell-padding-x: 425px;
     }
 }
