@@ -48,7 +48,7 @@ button {
     background: transparent;
     display: flex;
     align-items: flex-end;
-    padding-bottom: 60px;
+    padding-bottom: 115px;
 }
 
 .page-background {
@@ -374,5 +374,12 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 
     .carousel-button-next {
         right: 6px;
+    }
+}
+
+/* 2K / large desktop */
+@media (min-width: 2560px) {
+    :root {
+        --shell-padding-x: 360px;
     }
 }
