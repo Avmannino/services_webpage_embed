@@ -387,8 +387,8 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* 2K / large desktop */
-@media (min-width: 2560px) {
+@media (min-width: 2558px) {
     :root {
-        --shell-padding-x: 450px;
+        --shell-padding-x: 500px;
     }
 }
