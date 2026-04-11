@@ -118,7 +118,7 @@ button {
     min-width: calc((100% - (var(--card-gap) * 2)) / 3);
     height: var(--card-height);
     overflow: hidden;
-    border-radius: 50px;
+    border-radius: 30px;
     background-color: #171717;
     background-size: cover;
     background-position: center center;
