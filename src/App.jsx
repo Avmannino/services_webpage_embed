@@ -154,6 +154,13 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const screenWidth = window.screen.width;
+    if (screenWidth >= 2558) {
+      document.documentElement.style.setProperty("--shell-padding-x", "500px");
+    }
+  }, []);
+
+  useEffect(() => {
     const max = Math.max(0, services.length - visibleCount);
     if (currentIndex > max) {
       setCurrentIndex(max);
