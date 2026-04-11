@@ -75,9 +75,6 @@ button {
 .services-section {
     position: relative;
     z-index: 1;
-}
-
-.services-section {
     width: 100%;
     padding: 24px 0;
 }
@@ -86,7 +83,6 @@ button {
     width: var(--section-width);
     padding: 0 var(--shell-padding-x);
 }
-
 
 .carousel-wrapper {
     position: relative;
@@ -124,7 +120,7 @@ button {
     background-size: cover;
     background-position: center center;
     isolation: isolate;
-transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .service-card:hover {
@@ -257,7 +253,6 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
     height: 29px;
 }
 
-
 /* 1470px breakpoint: shorter cards */
 @media (max-width: 1500px) and (min-width: 1101px) {
     :root {
@@ -386,8 +381,8 @@ transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
     }
 }
 
-/* 2K / large desktop */
-@media (min-width: 2558px) {
+/* Large desktop / Wix 2560 breakpoint */
+@media (min-width: 2520px) {
     :root {
         --shell-padding-x: 500px;
     }

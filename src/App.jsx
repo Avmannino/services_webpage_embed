@@ -29,6 +29,7 @@ import iconAcoustic from "./assets/icons/acoustic.png";
 import iconFabricPanels from "./assets/icons/fabric-panels.png";
 import iconIdeaPaint from "./assets/icons/idea-paint.png";
 
+
 const services = [
   {
     id: 1,
@@ -131,6 +132,7 @@ function App() {
     const interval = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % backgrounds.length);
     }, 5000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -154,10 +156,23 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const screenWidth = window.screen.width;
-    if (screenWidth >= 2558) {
-      document.documentElement.style.setProperty("--shell-padding-x", "500px");
-    }
+    const updateShellPadding = () => {
+      const width = window.innerWidth;
+      const root = document.documentElement;
+
+      if (width >= 2520) {
+        root.style.setProperty("--shell-padding-x", "500px");
+      } else if (width <= 1100) {
+        root.style.setProperty("--shell-padding-x", "40px");
+      } else {
+        root.style.setProperty("--shell-padding-x", "140px");
+      }
+    };
+
+    updateShellPadding();
+    window.addEventListener("resize", updateShellPadding);
+
+    return () => window.removeEventListener("resize", updateShellPadding);
   }, []);
 
   useEffect(() => {
@@ -193,7 +208,10 @@ function App() {
           <div
             key={i}
             className="page-background-slide"
-            style={{ backgroundImage: `url(${bg})`, opacity: i === bgIndex ? 1 : 0 }}
+            style={{
+              backgroundImage: `url(${bg})`,
+              opacity: i === bgIndex ? 1 : 0,
+            }}
           />
         ))}
         <div className="page-background-overlay" />
@@ -222,51 +240,49 @@ function App() {
             </button>
 
             <div className="carousel-clip">
-            <div className="carousel-area" id="services-carousel">
-              <div
-                className="carousel-track"
-                style={{
-                  transform: `translateX(calc(-${currentIndex} * ((100% - (${visibleCount} - 1) * var(--card-gap)) / ${visibleCount} + var(--card-gap))))`,
-                }}
-              >
-                {services.map((service) => (
-                  <article
-                    className="service-card"
-                    key={service.id}
-                  >
-                    <div
-                      className="service-card-bg"
-                      style={{ backgroundImage: `url(${service.image})` }}
-                    />
-                    <div className="service-card-gradient" />
+              <div className="carousel-area" id="services-carousel">
+                <div
+                  className="carousel-track"
+                  style={{
+                    transform: `translateX(calc(-${currentIndex} * ((100% - (${visibleCount} - 1) * var(--card-gap)) / ${visibleCount} + var(--card-gap))))`,
+                  }}
+                >
+                  {services.map((service) => (
+                    <article className="service-card" key={service.id}>
+                      <div
+                        className="service-card-bg"
+                        style={{ backgroundImage: `url(${service.image})` }}
+                      />
+                      <div className="service-card-gradient" />
 
-                    <div className="service-card-content">
-                      {service.icon && (
-                        <img
-                          src={service.icon}
-                          alt=""
-                          className="service-card-icon"
-                          aria-hidden="true"
-                        />
-                      )}
+                      <div className="service-card-content">
+                        {service.icon && (
+                          <img
+                            src={service.icon}
+                            alt=""
+                            className="service-card-icon"
+                            aria-hidden="true"
+                          />
+                        )}
 
-                      <p className="service-card-eyebrow">{service.eyebrow}</p>
+                        <p className="service-card-eyebrow">
+                          {service.eyebrow}
+                        </p>
 
-                      <h2 className="service-card-title">{service.title}</h2>
+                        <h2 className="service-card-title">{service.title}</h2>
 
-                      <p className="service-card-description">
-                        {service.description}
-                      </p>
+                        <p className="service-card-description">
+                          {service.description}
+                        </p>
 
-                      <p className="service-card-detail">{service.detail}</p>
+                        <p className="service-card-detail">{service.detail}</p>
 
-                      <div className="service-card-line" />
-                    </div>
-                  </article>
-                ))}
-
+                        <div className="service-card-line" />
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
-            </div>
             </div>
 
             <button
