@@ -226,8 +226,11 @@ function App() {
                   <article
                     className="service-card"
                     key={service.id}
-                    style={{ backgroundImage: `url(${service.image})` }}
                   >
+                    <div
+                      className="service-card-bg"
+                      style={{ backgroundImage: `url(${service.image})` }}
+                    />
                     <div className="service-card-gradient" />
 
                     <div className="service-card-content">
