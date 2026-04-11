@@ -1,5 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 
+import bg1 from "./assets/backgrounds/bg-1.webp";
+import bg2 from "./assets/backgrounds/bg-2.webp";
+import bg3 from "./assets/backgrounds/bg-3.jpg";
+import bg4 from "./assets/backgrounds/bg-4.jpeg";
+import bg5 from "./assets/backgrounds/bg-5.webp";
+import bg6 from "./assets/backgrounds/bg-6.webp";
+
+const backgrounds = [bg1, bg2, bg3, bg4, bg5, bg6];
+
 import service1 from "./assets/placeholders/service-1.png";
 import service2 from "./assets/placeholders/service-2.png";
 import service3 from "./assets/placeholders/service-3.png";
@@ -116,6 +125,14 @@ const services = [
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3);
+  const [bgIndex, setBgIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBgIndex((prev) => (prev + 1) % backgrounds.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const updateVisibleCount = () => {
@@ -164,6 +181,17 @@ function App() {
 
   return (
     <main className="services-page">
+      <div className="page-background">
+        {backgrounds.map((bg, i) => (
+          <div
+            key={i}
+            className="page-background-slide"
+            style={{ backgroundImage: `url(${bg})`, opacity: i === bgIndex ? 1 : 0 }}
+          />
+        ))}
+        <div className="page-background-overlay" />
+      </div>
+
       <section className="services-section">
         <div className="services-shell">
           <div className="carousel-wrapper">
