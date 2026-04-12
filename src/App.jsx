@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 
-import bg1 from "./assets/backgrounds/bg-1.webp";
-import bg2 from "./assets/backgrounds/bg-2.webp";
-import bg3 from "./assets/backgrounds/bg-3.jpg";
-import bg4 from "./assets/backgrounds/bg-4.jpeg";
-import bg5 from "./assets/backgrounds/bg-5.webp";
-import bg6 from "./assets/backgrounds/bg-6.webp";
+// import bg1 from "./assets/backgrounds/bg-1.webp";
+// import bg2 from "./assets/backgrounds/bg-2.webp";
+// import bg3 from "./assets/backgrounds/bg-3.jpg";
+// import bg4 from "./assets/backgrounds/bg-4.jpeg";
+// import bg5 from "./assets/backgrounds/bg-5.webp";
+// import bg6 from "./assets/backgrounds/bg-6.webp";
 
-const backgrounds = [bg1, bg2, bg3, bg4, bg5, bg6];
+// const backgrounds = [bg1, bg2, bg3, bg4, bg5, bg6];
 
 import service1 from "./assets/placeholders/service-1.png";
 import service2 from "./assets/placeholders/service-2.png";
@@ -125,15 +125,14 @@ const services = [
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3);
-  const [bgIndex, setBgIndex] = useState(0);
+  // const [bgIndex, setBgIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setBgIndex((prev) => (prev + 1) % backgrounds.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setBgIndex((prev) => (prev + 1) % backgrounds.length);
+  //   }, 5000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   useEffect(() => {
     const updateVisibleCount = () => {
@@ -141,7 +140,7 @@ function App() {
 
       if (width <= 767) {
         setVisibleCount(1);
-      } else if (width <= 1100) {
+      } else if (width <= 1400) {
         setVisibleCount(2);
       } else {
         setVisibleCount(3);
@@ -202,6 +201,7 @@ function App() {
 
   return (
     <main className="services-page">
+      {/* Background slideshow — commented out; background is transparent
       <div className="page-background">
         {backgrounds.map((bg, i) => (
           <div
@@ -215,6 +215,7 @@ function App() {
         ))}
         <div className="page-background-overlay" />
       </div>
+      */}
 
       <section className="services-section">
         <div className="services-shell">

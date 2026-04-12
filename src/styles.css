@@ -11,7 +11,7 @@
     --gold-hover: rgba(216, 177, 78, 0.08);
     --card-gap: 18px;
     --shell-padding-x: 140px;
-    --card-height: 635px;
+    --card-height: 605px;
     --section-width: 100%;
 }
 
@@ -51,6 +51,7 @@ button {
     padding-bottom: 115px;
 }
 
+/* Background slideshow — commented out; background is transparent
 .page-background {
     position: fixed;
     inset: 0;
@@ -71,6 +72,7 @@ button {
     inset: 0;
     background: linear-gradient(160deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.65) 100%);
 }
+*/
 
 .services-section {
     position: relative;
@@ -158,7 +160,7 @@ button {
     position: absolute;
     inset: 0 0 auto 0;
     z-index: 3;
-    padding: 69px 36px 0;
+    padding: 54px 36px 0 20px;
 }
 
 .service-card-icon {
@@ -171,7 +173,7 @@ button {
 .service-card-eyebrow {
     margin: 0 0 12px;
     color: var(--gold-strong);
-    font-size: 11.39px;
+    font-size: clamp(10px, 0.75vw, 11.39px);
     font-weight: 700;
     letter-spacing: 0.26em;
     text-transform: uppercase;
@@ -192,14 +194,14 @@ button {
     margin: 0 0 20px;
     max-width: 84%;
     color: rgba(255, 255, 255, 0.72);
-    font-size: 17.71px;
+    font-size: clamp(14px, 1.1vw, 17.71px);
     line-height: 1.6;
 }
 
 .service-card-detail {
     margin: 0;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 13.92px;
+    font-size: clamp(11.5px, 0.85vw, 13.92px);
     font-weight: 600;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -253,19 +255,12 @@ button {
     height: 29px;
 }
 
-/* 1470px breakpoint: shorter cards */
-@media (max-width: 1500px) and (min-width: 1101px) {
-    :root {
-        --card-height: 567px;
-    }
-}
-
-/* Tablet: 2 cards */
-@media (max-width: 1100px) {
+/* Tablet / mid-desktop: 2 cards up to 1400px */
+@media (max-width: 1400px) {
     :root {
         --shell-padding-x: 40px;
         --card-gap: 16px;
-        --card-height: 575px;
+        --card-height: 545px;
     }
 
     .service-card {
@@ -274,7 +269,7 @@ button {
     }
 
     .service-card-content {
-        padding: 63px 26px 0;
+        padding: 48px 26px 0 16px;
     }
 
     .service-card-icon {
@@ -298,16 +293,20 @@ button {
     }
 }
 
-/* Mobile: 1 card */
+/* Mobile: 1 card, buttons overlaid */
 @media (max-width: 767px) {
     :root {
         --shell-padding-x: 0px;
         --card-gap: 12px;
-        --card-height: 582px;
+        --card-height: 552px;
     }
 
     .services-section {
         padding: 16px 0 24px;
+    }
+
+    .carousel-wrapper {
+        gap: 0;
     }
 
     .carousel-clip {
@@ -327,42 +326,33 @@ button {
     }
 
     .service-card-content {
-        padding: 87px 20px 0;
+        padding: 72px 20px 0 14px;
     }
 
     .service-card-icon {
-        width: 40px;
-        height: 40px;
+        width: clamp(40px, 9vw, 58px);
+        height: clamp(40px, 9vw, 58px);
         margin-bottom: 12px;
+    }
+
+    .service-card-eyebrow {
+        font-size: clamp(10px, 1.8vw, 12px);
     }
 
     .service-card-title {
         max-width: 92%;
-        font-size: clamp(20px, 6vw, 28px);
+        font-size: clamp(26px, 7vw, 40px);
         line-height: 1;
     }
 
     .service-card-description {
         max-width: 92%;
-        font-size: 14.3px;
+        font-size: clamp(15px, 4vw, 18px);
         line-height: 1.55;
     }
 
-    .carousel-button {
-        width: 53px;
-        height: 53px;
-    }
-
-    .carousel-button svg {
-        width: 22px;
-        height: 22px;
-    }
-}
-
-/* Mobile: buttons overlay inside card */
-@media (max-width: 500px) {
-    .carousel-wrapper {
-        gap: 0;
+    .service-card-detail {
+        font-size: clamp(11px, 2vw, 14px);
     }
 
     .carousel-button {
@@ -370,6 +360,13 @@ button {
         top: 50%;
         transform: translateY(-50%);
         z-index: 10;
+        width: 53px;
+        height: 53px;
+    }
+
+    .carousel-button svg {
+        width: 22px;
+        height: 22px;
     }
 
     .carousel-button-prev {
@@ -380,6 +377,7 @@ button {
         right: 6px;
     }
 }
+
 
 /* Large desktop / Wix 2560 breakpoint */
 @media (min-width: 2520px) {
