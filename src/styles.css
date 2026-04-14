@@ -370,7 +370,7 @@ button {
 
 
 /* Wix 768px breakpoint */
-@media (max-width: 768px) {
+@media (max-width: 900px) and (min-width: 650px) {
     :root {
         --card-height: 360px;
         --shell-padding-x: 60px;
