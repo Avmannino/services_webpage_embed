@@ -426,7 +426,7 @@ button {
 /* Wix mobile: 325px–550px */
 @media (max-width: 550px) and (min-width: 325px) {
     :root {
-        --card-height: 367px;
+        --card-height: 422px;
         --shell-padding-x: 0px;
     }
 
@@ -436,17 +436,56 @@ button {
     }
 
     .carousel-wrapper {
-        gap: 0px;
+        gap: 0;
+    }
+
+    .carousel-clip {
+        flex: 1;
+        margin: 0;
     }
 
     .carousel-button {
-        width: 22px;
-        height: 22px;
+        position: absolute;
+        top: 72%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 56px;
+        height: 56px;
+        padding: 4px;
+        background: transparent;
+        border: none;
+        color: #ffffff;
     }
 
-    .carousel-button svg {
-        width: 10px;
-        height: 10px;
+    .carousel-button:hover {
+        background: transparent;
+        border: none;
+    }
+
+    .carousel-button-prev {
+        left: 4px;
+        background: transparent;
+        border: none;
+        color: #ffffff;
+    }
+
+    .carousel-button-prev:hover {
+        background: transparent;
+        border: none;
+    }
+
+    .carousel-button-next {
+        right: 4px;
+    }
+
+    .carousel-wrapper .carousel-button svg {
+        width: 48px;
+        height: 48px;
+        filter: drop-shadow(0 1px 4px rgba(0,0,0,0.8));
+    }
+
+    .carousel-wrapper .carousel-button svg path {
+        stroke-width: 3;
     }
 
     .service-card-content {
@@ -454,46 +493,37 @@ button {
     }
 
     .service-card-icon {
-        width: 44px;
-        height: 44px;
+        width: 46px;
+        height: 46px;
         margin-bottom: 14px;
     }
 
     .service-card-eyebrow {
-        font-size: 9.8px;
+        font-size: 10.3px;
         margin: 0 0 12px;
     }
 
     .service-card-title {
-        font-size: clamp(18px, 6.5vw, 25px);
+        font-size: clamp(19px, 6.5vw, 26px);
         margin: 0 0 12px;
     }
 
     .service-card-description {
-        font-size: 13.8px;
+        font-size: 14.5px;
         margin: 0 0 14px;
         line-height: 1.45;
     }
 
     .service-card-detail {
-        font-size: 11.5px;
+        font-size: 12px;
     }
 
     .service-card-line {
-        width: 72px;
+        width: 76px;
         height: 2px;
         margin-top: 16px;
     }
 
-    .carousel-button {
-        width: 41px;
-        height: 41px;
-    }
-
-    .carousel-button svg {
-        width: 16px;
-        height: 16px;
-    }
 }
 
 /* Large desktop / Wix 2560 breakpoint */

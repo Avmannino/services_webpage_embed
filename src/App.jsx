@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 // import bg1 from "./assets/backgrounds/bg-1.webp";
 // import bg2 from "./assets/backgrounds/bg-2.webp";
@@ -125,6 +125,7 @@ const services = [
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3);
+  const touchStartX = useRef(null);
   // const [bgIndex, setBgIndex] = useState(0);
 
   // useEffect(() => {
@@ -199,6 +200,20 @@ function App() {
     });
   };
 
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const delta = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 40) {
+      if (delta > 0) handleNext();
+      else handlePrev();
+    }
+    touchStartX.current = null;
+  };
+
   return (
     <main className="services-page">
       {/* Background slideshow — commented out; background is transparent
@@ -246,6 +261,8 @@ function App() {
                   style={{
                     transform: `translateX(calc(-${currentIndex} * ((100% - (${visibleCount} - 1) * var(--card-gap)) / ${visibleCount} + var(--card-gap))))`,
                   }}
+                  onTouchStart={handleTouchStart}
+                  onTouchEnd={handleTouchEnd}
                 >
                   {services.map((service) => (
                     <article className="service-card" key={service.id}>
