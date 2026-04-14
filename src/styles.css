@@ -426,13 +426,27 @@ button {
 /* Wix mobile: 325px–550px */
 @media (max-width: 550px) and (min-width: 325px) {
     :root {
-        --card-height: 334px;
-        --shell-padding-x: 12px;
+        --card-height: 367px;
+        --shell-padding-x: 0px;
     }
 
     .service-card {
         flex: 0 0 100%;
         min-width: 100%;
+    }
+
+    .carousel-wrapper {
+        gap: 0px;
+    }
+
+    .carousel-button {
+        width: 22px;
+        height: 22px;
+    }
+
+    .carousel-button svg {
+        width: 10px;
+        height: 10px;
     }
 
     .service-card-content {
