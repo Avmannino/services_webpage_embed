@@ -320,8 +320,8 @@ function App() {
                 />
               </svg>
             </button>
-          </div>
           <p className="swipe-hint">Swipe to view more</p>
+          </div>
         </div>
       </section>
     </main>
