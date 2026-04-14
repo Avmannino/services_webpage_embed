@@ -423,11 +423,16 @@ button {
     }
 }
 
-/* Wix 415px breakpoint */
-@media (max-width: 415px) {
+/* Wix mobile: 325px–550px */
+@media (max-width: 550px) and (min-width: 325px) {
     :root {
-        --card-height: 290px;
+        --card-height: 334px;
         --shell-padding-x: 12px;
+    }
+
+    .service-card {
+        flex: 0 0 100%;
+        min-width: 100%;
     }
 
     .service-card-content {
@@ -435,45 +440,45 @@ button {
     }
 
     .service-card-icon {
-        width: 29px;
-        height: 29px;
-        margin-bottom: 6px;
+        width: 44px;
+        height: 44px;
+        margin-bottom: 14px;
     }
 
     .service-card-eyebrow {
-        font-size: 8.5px;
-        margin: 0 0 6px;
+        font-size: 9.8px;
+        margin: 0 0 12px;
     }
 
     .service-card-title {
-        font-size: clamp(16px, 5.5vw, 22px);
-        margin: 0 0 6px;
+        font-size: clamp(18px, 6.5vw, 25px);
+        margin: 0 0 12px;
     }
 
     .service-card-description {
-        font-size: 12px;
-        margin: 0 0 8px;
+        font-size: 13.8px;
+        margin: 0 0 14px;
         line-height: 1.45;
     }
 
     .service-card-detail {
-        font-size: 10px;
+        font-size: 11.5px;
     }
 
     .service-card-line {
-        width: 28px;
+        width: 72px;
         height: 2px;
-        margin-top: 10px;
+        margin-top: 16px;
     }
 
     .carousel-button {
-        width: 36px;
-        height: 36px;
+        width: 41px;
+        height: 41px;
     }
 
     .carousel-button svg {
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
     }
 }
 
