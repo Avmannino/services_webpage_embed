@@ -87,6 +87,10 @@ button {
     padding: 0 var(--shell-padding-x);
 }
 
+.swipe-hint {
+    display: none;
+}
+
 .carousel-wrapper {
     position: relative;
     display: flex;
@@ -445,47 +449,18 @@ button {
     }
 
     .carousel-button {
-        position: absolute;
-        top: 72%;
-        transform: translateY(-50%);
-        z-index: 10;
-        width: 56px;
-        height: 56px;
-        padding: 4px;
-        background: transparent;
-        border: none;
-        color: #ffffff;
+        display: none;
     }
 
-    .carousel-button:hover {
-        background: transparent;
-        border: none;
-    }
-
-    .carousel-button-prev {
-        left: 4px;
-        background: transparent;
-        border: none;
-        color: #ffffff;
-    }
-
-    .carousel-button-prev:hover {
-        background: transparent;
-        border: none;
-    }
-
-    .carousel-button-next {
-        right: 4px;
-    }
-
-    .carousel-wrapper .carousel-button svg {
-        width: 48px;
-        height: 48px;
-        filter: drop-shadow(0 1px 4px rgba(0,0,0,0.8));
-    }
-
-    .carousel-wrapper .carousel-button svg path {
-        stroke-width: 3;
+    .swipe-hint {
+        display: block;
+        margin: 0 0 10px;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
     }
 
     .service-card-content {

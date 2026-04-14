@@ -234,6 +234,7 @@ function App() {
 
       <section className="services-section">
         <div className="services-shell">
+          <p className="swipe-hint">Swipe to view more</p>
           <div className="carousel-wrapper">
             <button
               type="button"
