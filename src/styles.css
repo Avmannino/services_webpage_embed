@@ -294,7 +294,7 @@ button {
     }
 }
 
-/* Mobile: 1 card, buttons overlaid */
+/* Mobile */
 @media (max-width: 767px) {
     :root {
         --shell-padding-x: 0px;
@@ -307,7 +307,7 @@ button {
     }
 
     .carousel-wrapper {
-        gap: 0;
+        gap: 8px;
     }
 
     .carousel-clip {
@@ -318,8 +318,8 @@ button {
     }
 
     .service-card {
-        flex: 0 0 100%;
-        min-width: 100%;
+        flex: 0 0 calc((100% - var(--card-gap)) / 2);
+        min-width: calc((100% - var(--card-gap)) / 2);
     }
 
     .service-card:hover {
@@ -357,10 +357,6 @@ button {
     }
 
     .carousel-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
         width: 53px;
         height: 53px;
     }
@@ -369,23 +365,115 @@ button {
         width: 22px;
         height: 22px;
     }
-
-    .carousel-button-prev {
-        left: 6px;
-    }
-
-    .carousel-button-next {
-        right: 6px;
-    }
 }
 
 
-/* 501–767px: centered narrower card */
-@media (max-width: 767px) and (min-width: 501px) {
-    .carousel-area {
-        width: 75%;
-        margin: 0 auto;
-        overflow: hidden;
+
+/* Wix 768px breakpoint */
+@media (max-width: 768px) {
+    :root {
+        --card-height: 360px;
+        --shell-padding-x: 60px;
+    }
+
+    .service-card-content {
+        padding: 47px 16px 0 14px;
+    }
+
+    .service-card-icon {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 8px;
+    }
+
+    .service-card-eyebrow {
+        font-size: 9.5px;
+        margin: 0 0 8px;
+    }
+
+    .service-card-title {
+        font-size: clamp(17px, 2.4vw, 23px);
+        margin: 0 0 8px;
+    }
+
+    .service-card-description {
+        font-size: 13.5px;
+        margin: 0 0 10px;
+        line-height: 1.5;
+    }
+
+    .service-card-detail {
+        font-size: 10.5px;
+    }
+
+    .service-card-line {
+        width: 36px;
+        height: 2px;
+        margin-top: 14px;
+    }
+
+    .carousel-button {
+        width: 44px;
+        height: 44px;
+    }
+
+    .carousel-button svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Wix 415px breakpoint */
+@media (max-width: 415px) {
+    :root {
+        --card-height: 290px;
+        --shell-padding-x: 12px;
+    }
+
+    .service-card-content {
+        padding: 43px 14px 0 12px;
+    }
+
+    .service-card-icon {
+        width: 29px;
+        height: 29px;
+        margin-bottom: 6px;
+    }
+
+    .service-card-eyebrow {
+        font-size: 8.5px;
+        margin: 0 0 6px;
+    }
+
+    .service-card-title {
+        font-size: clamp(16px, 5.5vw, 22px);
+        margin: 0 0 6px;
+    }
+
+    .service-card-description {
+        font-size: 12px;
+        margin: 0 0 8px;
+        line-height: 1.45;
+    }
+
+    .service-card-detail {
+        font-size: 10px;
+    }
+
+    .service-card-line {
+        width: 28px;
+        height: 2px;
+        margin-top: 10px;
+    }
+
+    .carousel-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .carousel-button svg {
+        width: 14px;
+        height: 14px;
     }
 }
 

@@ -138,7 +138,7 @@ function App() {
     const updateVisibleCount = () => {
       const width = window.innerWidth;
 
-      if (width <= 767) {
+      if (width < 415) {
         setVisibleCount(1);
       } else if (width <= 1400) {
         setVisibleCount(2);
