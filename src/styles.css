@@ -1,514 +1,561 @@
 :root {
-    --bg-main: #04080d;
-    --panel-top: #081018;
-    --panel-bottom: #04080d;
-    --text-main: #f3f4f6;
-    --text-soft: rgba(255, 255, 255, 0.84);
-    --text-muted: rgba(255, 255, 255, 0.16);
-    --gold: #d8b14e;
-    --gold-strong: #e2bd5d;
-    --gold-soft: rgba(216, 177, 78, 0.22);
-    --gold-hover: rgba(216, 177, 78, 0.08);
-    --card-gap: 18px;
-    --card-width: 100%;
-    --shell-padding-x: 140px;
-    --card-height: 605px;
-    --section-width: 100%;
+  --bg-main: #04080d;
+  --panel-top: #081018;
+  --panel-bottom: #04080d;
+  --text-main: #f3f4f6;
+  --text-soft: rgba(255, 255, 255, 0.84);
+  --text-muted: rgba(255, 255, 255, 0.16);
+  --gold: #d8b14e;
+  --gold-strong: #e2bd5d;
+  --gold-soft: rgba(216, 177, 78, 0.22);
+  --gold-hover: rgba(216, 177, 78, 0.08);
+  --card-gap: 18px;
+  --card-width: 100%;
+  --shell-padding-x: 140px;
+  --card-height: 605px;
+  --section-width: 100%;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body,
 #root {
-    margin: 0;
-    min-height: 100%;
-    width: 100%;
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-    background: transparent;
-    color: var(--text-main);
-    font-family: Inter, Arial, Helvetica, sans-serif;
+  background: transparent;
+  color: var(--text-main);
+  font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
-    font: inherit;
+  font: inherit;
 }
 
 .services-page {
-    position: relative;
-    min-height: 100vh;
-    background: transparent;
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 65px;
+  position: relative;
+  min-height: 100vh;
+  background: transparent;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 65px;
 }
 
 /* Background slideshow — commented out; background is transparent
 .page-background {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
 }
 
 .page-background-slide {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
 }
 
 .page-background-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(160deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.65) 100%);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.65) 100%);
 }
 */
 
 .services-section {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    padding: 44px 0 0px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 44px 0 0;
 }
 
 .services-shell {
-    width: var(--section-width);
-    padding: 0 var(--shell-padding-x);
+  width: var(--section-width);
+  padding: 0 var(--shell-padding-x);
 }
 
 .swipe-hint {
-    display: none;
+  display: none;
 }
 
 .carousel-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 28px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
 }
 
 .carousel-clip {
-    flex: 1;
-    overflow-x: clip;
-    padding: 12px 10px;
-    margin: 0 -10px;
+  flex: 1;
+  overflow-x: clip;
+  padding: 12px 10px;
+  margin: 0 -10px;
+  min-width: 0;
 }
 
 .carousel-area {
-    overflow: visible;
+  overflow: visible;
+  width: 100%;
 }
 
 .carousel-track {
-    display: flex;
-    gap: var(--card-gap);
-    transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: transform;
+  display: flex;
+  gap: var(--card-gap);
+  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
 .service-card {
-    position: relative;
-    flex: 0 0 calc((100% - (var(--card-gap) * 2)) / 3);
-    min-width: calc((100% - (var(--card-gap) * 2)) / 3);
-    height: var(--card-height);
-    overflow: hidden;
-    border-radius: 30px;
-    background-color: #171717;
-    background-size: cover;
-    background-position: center center;
-    isolation: isolate;
-    transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  flex: 0 0 calc((100% - (var(--card-gap) * 2)) / 3);
+  min-width: calc((100% - (var(--card-gap) * 2)) / 3);
+  height: var(--card-height);
+  overflow: hidden;
+  border-radius: 30px;
+  background-color: #171717;
+  background-size: cover;
+  background-position: center center;
+  isolation: isolate;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .service-card:hover {
-    transform: scale(1.015) translateY(-2px);
+  transform: scale(1.015) translateY(-2px);
 }
 
 .service-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
-    border-right: 1px solid rgba(255, 255, 255, 0.04);
-    pointer-events: none;
-    z-index: 2;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .service-card-bg {
-    position: absolute;
-    inset: -6px;
-    background-size: cover;
-    background-position: center center;
-    filter: blur(2px);
-    z-index: 0;
+  position: absolute;
+  inset: -6px;
+  background-size: cover;
+  background-position: center center;
+  filter: blur(2px);
+  z-index: 0;
 }
 
 .service-card-gradient {
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(180deg, rgba(5, 10, 16, 0.9) 0%, rgba(5, 10, 16, 0.22) 64%, rgba(5, 10, 16, 0.08) 100%);
-    z-index: 1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 10, 16, 0.9) 0%,
+    rgba(5, 10, 16, 0.22) 64%,
+    rgba(5, 10, 16, 0.08) 100%
+  );
+  z-index: 1;
 }
 
 .service-card-content {
-    position: absolute;
-    inset: 0 0 auto 0;
-    z-index: 3;
-    padding: 54px 36px 0 20px;
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 3;
+  padding: 54px 36px 0 20px;
 }
 
 .service-card-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 16px;
-    object-fit: contain;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 16px;
+  object-fit: contain;
 }
 
 .service-card-eyebrow {
-    margin: 0 0 12px;
-    color: var(--gold-strong);
-    font-size: clamp(10px, 0.75vw, 11.39px);
-    font-weight: 700;
-    letter-spacing: 0.26em;
-    text-transform: uppercase;
+  margin: 0 0 12px;
+  color: var(--gold-strong);
+  font-size: clamp(10px, 0.75vw, 11.39px);
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
 }
 
 .service-card-title {
-    margin: 0 0 14px;
-    max-width: 92%;
-    color: #f2f2f2;
-    font-size: clamp(28px, 2.2vw, 42px);
-    line-height: 0.95;
-    font-weight: 800;
-    letter-spacing: -0.045em;
-    text-transform: uppercase;
+  margin: 0 0 14px;
+  max-width: 92%;
+  color: #f2f2f2;
+  font-size: clamp(28px, 2.2vw, 42px);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
 }
 
 .service-card-description {
-    margin: 0 0 20px;
-    max-width: 84%;
-    color: rgba(255, 255, 255, 0.72);
-    font-size: clamp(14px, 1.1vw, 17.71px);
-    line-height: 1.6;
+  margin: 0 0 20px;
+  max-width: 84%;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(14px, 1.1vw, 17.71px);
+  line-height: 1.6;
 }
 
 .service-card-detail {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: clamp(11.5px, 0.85vw, 13.92px);
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: clamp(11.5px, 0.85vw, 13.92px);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .service-card-line {
-    width: 54px;
-    height: 3px;
-    margin-top: 28px;
-    background: var(--gold);
+  width: 54px;
+  height: 3px;
+  margin-top: 28px;
+  background: var(--gold);
 }
 
 .carousel-button {
-    flex-shrink: 0;
-    width: 67px;
-    height: 67px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(216, 177, 78, 0.5);
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.18);
-    color: #ffffff;
-    cursor: pointer;
-    transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+  flex-shrink: 0;
+  width: 67px;
+  height: 67px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(216, 177, 78, 0.5);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .carousel-button:hover {
-    background: rgba(255, 255, 255, 0.28);
-    border-color: #d8b14ecc;
+  background: rgba(255, 255, 255, 0.28);
+  border-color: #d8b14ecc;
 }
 
 .carousel-button:disabled {
-    opacity: 0.3;
-    cursor: default;
+  opacity: 0.3;
+  cursor: default;
 }
 
 .carousel-button-next {
-    background: var(--gold);
-    color: #111;
-    border-color: var(--gold);
+  background: var(--gold);
+  color: #111;
+  border-color: var(--gold);
 }
 
 .carousel-button-next:hover {
-    background: var(--gold-strong);
-    border-color: var(--gold-strong);
+  background: var(--gold-strong);
+  border-color: var(--gold-strong);
 }
 
 .carousel-button svg {
-    width: 29px;
-    height: 29px;
+  width: 29px;
+  height: 29px;
 }
 
 /* Tablet / mid-desktop: 2 cards up to 1400px */
 @media (max-width: 1400px) {
-    :root {
-        --shell-padding-x: 40px;
-        --card-gap: 16px;
-        --card-height: 545px;
-    }
+  :root {
+    --shell-padding-x: 40px;
+    --card-gap: 16px;
+    --card-height: 545px;
+  }
 
-    .service-card {
-        flex: 0 0 calc((100% - var(--card-gap)) / 2);
-        min-width: calc((100% - var(--card-gap)) / 2);
-    }
+  .service-card {
+    flex: 0 0 calc((100% - var(--card-gap)) / 2);
+    min-width: calc((100% - var(--card-gap)) / 2);
+  }
 
-    .service-card-content {
-        padding: 48px 26px 0 16px;
-    }
+  .service-card-content {
+    padding: 48px 26px 0 16px;
+  }
 
-    .service-card-icon {
-        width: 48.75px;
-        height: 48.75px;
-    }
+  .service-card-icon {
+    width: 48.75px;
+    height: 48.75px;
+  }
 
-    .service-card-title {
-        max-width: 90%;
-        font-size: clamp(22px, 2.8vw, 34px);
-    }
+  .service-card-title {
+    max-width: 90%;
+    font-size: clamp(22px, 2.8vw, 34px);
+  }
 
-    .carousel-button {
-        width: 58px;
-        height: 58px;
-    }
+  .carousel-button {
+    width: 58px;
+    height: 58px;
+  }
 
-    .carousel-button svg {
-        width: 24px;
-        height: 24px;
-    }
+  .carousel-button svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
-/* Mobile */
+/* Mobile / tablet */
 @media (max-width: 767px) {
-    :root {
-        --shell-padding-x: 0px;
-        --card-gap: 12px;
-        --card-height: 552px;
-    }
+  :root {
+    --shell-padding-x: 16px;
+    --card-gap: 12px;
+    --card-height: 520px;
+  }
 
-    .services-section {
-        padding: 16px 0 24px;
-    }
+  .services-page {
+    min-height: auto;
+    padding-bottom: 28px;
+  }
 
-    .carousel-wrapper {
-        gap: 8px;
-    }
+  .services-section {
+    padding: 16px 0 24px;
+  }
 
-    .carousel-clip {
-        flex: 1;
-        overflow: hidden;
-        padding: 0;
-        margin: 0;
-    }
+  .carousel-wrapper {
+    gap: 8px;
+  }
 
-    .service-card {
-        flex: 0 0 calc((100% - var(--card-gap)) / 2);
-        min-width: calc((100% - var(--card-gap)) / 2);
-    }
+  .carousel-clip {
+    flex: 1;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+  }
 
-    .service-card:hover {
-        transform: none;
-    }
+  .service-card {
+    flex: 0 0 100%;
+    min-width: 100%;
+    border-radius: 24px;
+  }
 
-    .service-card-content {
-        padding: 72px 20px 0 14px;
-    }
+  .service-card:hover {
+    transform: none;
+  }
 
-    .service-card-icon {
-        width: clamp(40px, 9vw, 58px);
-        height: clamp(40px, 9vw, 58px);
-        margin-bottom: 12px;
-    }
+  .service-card-content {
+    padding: 46px 18px 0 14px;
+  }
 
-    .service-card-eyebrow {
-        font-size: clamp(10px, 1.8vw, 12px);
-    }
+  .service-card-icon {
+    width: clamp(40px, 9vw, 58px);
+    height: clamp(40px, 9vw, 58px);
+    margin-bottom: 12px;
+  }
 
-    .service-card-title {
-        max-width: 92%;
-        font-size: clamp(26px, 7vw, 40px);
-        line-height: 1;
-    }
+  .service-card-eyebrow {
+    font-size: clamp(10px, 1.8vw, 12px);
+    margin: 0 0 10px;
+  }
 
-    .service-card-description {
-        max-width: 92%;
-        font-size: clamp(15px, 4vw, 18px);
-        line-height: 1.55;
-    }
+  .service-card-title {
+    max-width: 92%;
+    font-size: clamp(22px, 7vw, 34px);
+    line-height: 1;
+    margin: 0 0 10px;
+  }
 
-    .service-card-detail {
-        font-size: clamp(11px, 2vw, 14px);
-    }
+  .service-card-description {
+    max-width: 94%;
+    font-size: clamp(14px, 4vw, 17px);
+    line-height: 1.5;
+    margin: 0 0 14px;
+  }
 
-    .carousel-button {
-        width: 53px;
-        height: 53px;
-    }
+  .service-card-detail {
+    font-size: clamp(11px, 2vw, 13px);
+  }
 
-    .carousel-button svg {
-        width: 22px;
-        height: 22px;
-    }
+  .service-card-line {
+    width: 64px;
+    height: 2px;
+    margin-top: 16px;
+  }
+
+  .carousel-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .carousel-button svg {
+    width: 22px;
+    height: 22px;
+  }
 }
-
-
 
 /* Wix 768px breakpoint */
 @media (max-width: 900px) and (min-width: 650px) {
-    :root {
-        --card-height: 360px;
-        --shell-padding-x: 60px;
-    }
+  :root {
+    --card-height: 360px;
+    --shell-padding-x: 60px;
+  }
 
-    .service-card-content {
-        padding: 47px 16px 0 14px;
-    }
+  .service-card {
+    flex: 0 0 calc((100% - var(--card-gap)) / 2);
+    min-width: calc((100% - var(--card-gap)) / 2);
+  }
 
-    .service-card-icon {
-        width: 36px;
-        height: 36px;
-        margin-bottom: 8px;
-    }
+  .service-card-content {
+    padding: 47px 16px 0 14px;
+  }
 
-    .service-card-eyebrow {
-        font-size: 9.5px;
-        margin: 0 0 8px;
-    }
+  .service-card-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 8px;
+  }
 
-    .service-card-title {
-        font-size: clamp(17px, 2.4vw, 23px);
-        margin: 0 0 8px;
-    }
+  .service-card-eyebrow {
+    font-size: 9.5px;
+    margin: 0 0 8px;
+  }
 
-    .service-card-description {
-        font-size: 13.5px;
-        margin: 0 0 10px;
-        line-height: 1.5;
-    }
+  .service-card-title {
+    font-size: clamp(17px, 2.4vw, 23px);
+    margin: 0 0 8px;
+  }
 
-    .service-card-detail {
-        font-size: 10.5px;
-    }
+  .service-card-description {
+    font-size: 13.5px;
+    margin: 0 0 10px;
+    line-height: 1.5;
+  }
 
-    .service-card-line {
-        width: 36px;
-        height: 2px;
-        margin-top: 14px;
-    }
+  .service-card-detail {
+    font-size: 10.5px;
+  }
 
-    .carousel-button {
-        width: 44px;
-        height: 44px;
-    }
+  .service-card-line {
+    width: 36px;
+    height: 2px;
+    margin-top: 14px;
+  }
 
-    .carousel-button svg {
-        width: 18px;
-        height: 18px;
-    }
+  .carousel-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .carousel-button svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 /* Wix mobile: 325px–550px */
 @media (max-width: 550px) and (min-width: 325px) {
-    :root {
-        --card-height: 422px;
-        --shell-padding-x: 0px;
-    }
+  :root {
+    --card-height: 440px;
+    --shell-padding-x: 12px;
+  }
 
-    .service-card {
-        flex: 0 0 100%;
-        min-width: 100%;
-    }
+  .service-card {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
 
-    .carousel-wrapper {
-        gap: 0;
-    }
+  .carousel-wrapper {
+    gap: 0;
+  }
 
-    .carousel-clip {
-        flex: 1;
-        margin: 0;
-    }
+  .carousel-clip {
+    flex: 1;
+    margin: 0;
+  }
 
-    .carousel-button {
-        display: none;
-    }
+  .carousel-button {
+    display: none;
+  }
 
-    .swipe-hint {
-        display: block;
-        position: absolute;
-        bottom: 18px;
-        left: 0;
-        right: 0;
-        text-align: center;
-        font-size: 10px;
-        font-weight: 600;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.75);
-        z-index: 5;
-        pointer-events: none;
-    }
+  .swipe-hint {
+    display: block;
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    z-index: 5;
+    pointer-events: none;
+  }
 
-    .service-card-content {
-        padding: 43px 14px 0 12px;
-    }
+  .service-card-content {
+    padding: 40px 14px 0 12px;
+  }
 
-    .service-card-icon {
-        width: 46px;
-        height: 46px;
-        margin-bottom: 14px;
-    }
+  .service-card-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 12px;
+  }
 
-    .service-card-eyebrow {
-        font-size: 10.3px;
-        margin: 0 0 12px;
-    }
+  .service-card-eyebrow {
+    font-size: 10px;
+    margin: 0 0 10px;
+  }
 
-    .service-card-title {
-        font-size: clamp(19px, 6.5vw, 26px);
-        margin: 0 0 12px;
-    }
+  .service-card-title {
+    font-size: clamp(18px, 6.4vw, 24px);
+    margin: 0 0 10px;
+    max-width: 94%;
+  }
 
-    .service-card-description {
-        font-size: 14.5px;
-        margin: 0 0 14px;
-        line-height: 1.45;
-    }
+  .service-card-description {
+    font-size: 14px;
+    margin: 0 0 12px;
+    line-height: 1.42;
+    max-width: 96%;
+  }
 
-    .service-card-detail {
-        font-size: 12px;
-    }
+  .service-card-detail {
+    font-size: 11px;
+  }
 
-    .service-card-line {
-        width: 76px;
-        height: 2px;
-        margin-top: 16px;
-    }
+  .service-card-line {
+    width: 60px;
+    height: 2px;
+    margin-top: 14px;
+  }
+}
 
+/* Very small mobile */
+@media (max-width: 374px) {
+  :root {
+    --shell-padding-x: 10px;
+    --card-height: 420px;
+  }
+
+  .service-card-content {
+    padding: 36px 12px 0 12px;
+  }
+
+  .service-card-title {
+    font-size: 18px;
+  }
+
+  .service-card-description {
+    font-size: 13.5px;
+  }
 }
 
 /* Large desktop / Wix 2560 breakpoint */
 @media (min-width: 2520px) {
-    :root {
-        --shell-padding-x: 425px;
-    }
+  :root {
+    --shell-padding-x: 425px;
+  }
 }
