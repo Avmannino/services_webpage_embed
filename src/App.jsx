@@ -161,8 +161,14 @@ function App() {
 
       if (width >= 2520) {
         root.style.setProperty("--shell-padding-x", "425px");
+      } else if (width <= 430) {
+        root.style.setProperty("--shell-padding-x", "10px");
+      } else if (width <= 550) {
+        root.style.setProperty("--shell-padding-x", "12px");
+      } else if (width <= 768) {
+        root.style.setProperty("--shell-padding-x", "16px");
       } else if (width <= 1100) {
-        root.style.setProperty("--shell-padding-x", "40px");
+        root.style.setProperty("--shell-padding-x", "24px");
       } else {
         root.style.setProperty("--shell-padding-x", "140px");
       }
@@ -206,11 +212,17 @@ function App() {
 
   const handleTouchEnd = (e) => {
     if (touchStartX.current === null) return;
+
     const delta = touchStartX.current - e.changedTouches[0].clientX;
+
     if (Math.abs(delta) > 40) {
-      if (delta > 0) handleNext();
-      else handlePrev();
+      if (delta > 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
     }
+
     touchStartX.current = null;
   };
 
@@ -320,7 +332,8 @@ function App() {
                 />
               </svg>
             </button>
-          <p className="swipe-hint">Swipe to view more</p>
+
+            <p className="swipe-hint">Swipe to view more</p>
           </div>
         </div>
       </section>
