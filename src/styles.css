@@ -486,6 +486,8 @@ button {
     flex: 1;
     margin: 0;
     border-radius: 24px;
+    background: transparent;
+    background-color: transparent;
   }
 
   .carousel-button {
