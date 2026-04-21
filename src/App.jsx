@@ -18,6 +18,7 @@ import service6 from "./assets/placeholders/service-6.png";
 import service7 from "./assets/placeholders/service-7.png";
 import service8 from "./assets/placeholders/service-8.png";
 import service9 from "./assets/placeholders/service-9.png";
+import service10 from "./assets/placeholders/service-10.png";
 
 import iconCommercialPainting from "./assets/icons/commercial-painting.png";
 import iconWallcovering from "./assets/icons/wallcovering.png";
@@ -28,6 +29,8 @@ import iconVenetianPlaster from "./assets/icons/venetian-plaster.png";
 import iconAcoustic from "./assets/icons/acoustic.png";
 import iconFabricPanels from "./assets/icons/fabric-panels.png";
 import iconIdeaPaint from "./assets/icons/idea-paint.png";
+import iconScuffmaster from "./assets/icons/scuffmaster.png";
+// import serviceScuffmaster from "./assets/placeholders/service-scuffmaster.png";
 
 const services = [
   {
@@ -119,6 +122,16 @@ const services = [
     detail: "Dry-Erase & Magnetic",
     icon: iconIdeaPaint,
     image: service9,
+  },
+  {
+    id: 10,
+    eyebrow: "Durable Performance",
+    title: "Scuffmaster Paint",
+    description:
+      "Performance-driven specialty coatings that create refined texture and lasting visual impact.",
+    detail: "Resilient & Long-Lasting", 
+    icon: iconScuffmaster, // replace with iconScuffmaster once added
+    image: service10, // replace with serviceScuffmaster once added
   },
 ];
 
