@@ -590,4 +590,8 @@ button {
   :root {
     --shell-padding-x: 425px;
   }
+
+  .services-section {
+    transform: translateY(40px);
+  }
 }
