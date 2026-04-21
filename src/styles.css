@@ -93,6 +93,7 @@ button {
   z-index: 1;
   width: 100%;
   padding: 0;
+  transform: translateY(35px);
 }
 
 .services-shell {
@@ -427,7 +428,7 @@ button {
   }
 
   .services-section {
-    transform: translateY(30px);
+    transform: translateY(65px);
   }
 
   .service-card {
@@ -592,6 +593,6 @@ button {
   }
 
   .services-section {
-    transform: translateY(70px);
+    transform: translateY(105px);
   }
 }
