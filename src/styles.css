@@ -280,6 +280,14 @@ button {
   height: 29px;
 }
 
+/* Wide desktop: 1401px–1600px (Wix ~1470px breakpoint) */
+@media (max-width: 1600px) and (min-width: 1401px) {
+  :root {
+    --shell-padding-x: 82px;
+    --card-height: 514px;
+  }
+}
+
 /* Tablet / mid-desktop: 2 cards up to 1400px */
 @media (max-width: 1400px) {
   :root {
@@ -412,6 +420,14 @@ button {
   :root {
     --card-height: 360px;
     --shell-padding-x: 60px;
+  }
+
+  .services-page {
+    padding-top: 0;
+  }
+
+  .services-section {
+    transform: translateY(-10px);
   }
 
   .service-card {
