@@ -423,11 +423,7 @@ button {
   }
 
   .services-page {
-    padding-top: 0;
-  }
-
-  .services-section {
-    transform: translateY(-10px);
+    padding-top: 30px;
   }
 
   .service-card {
