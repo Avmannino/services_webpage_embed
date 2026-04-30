@@ -38,7 +38,7 @@ const services = [
     eyebrow: "Precision Coating",
     title: "Commercial Painting",
     description:
-      "High-end interior and exterior painting solutions for commercial environments.",
+      "High-end interior painting solutions for commercial environments.",
     detail: "Interior & Exterior",
     icon: iconCommercialPainting,
     image: service1,
