@@ -330,7 +330,7 @@ button {
 /* Mobile / tablet */
 @media (max-width: 767px) {
   :root {
-    --shell-padding-x: 16px;
+    --shell-padding-x: 5%;
     --card-gap: 12px;
     --card-height: 520px;
   }
@@ -338,7 +338,7 @@ button {
   .services-page {
     align-items: center;
     justify-content: center;
-    padding: 55px 0 0;
+    padding: 85px 0 0;
   }
 
   .services-section {

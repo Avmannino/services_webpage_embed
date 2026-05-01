@@ -174,14 +174,10 @@ function App() {
 
       if (width >= 2520) {
         root.style.setProperty("--shell-padding-x", "425px");
-      } else if (width <= 430) {
-        root.style.setProperty("--shell-padding-x", "10px");
-      } else if (width <= 550) {
-        root.style.setProperty("--shell-padding-x", "12px");
-      } else if (width <= 768) {
-        root.style.setProperty("--shell-padding-x", "16px");
-      } else if (width <= 1100) {
-        root.style.setProperty("--shell-padding-x", "24px");
+      } else if (width <= 767) {
+        root.style.setProperty("--shell-padding-x", "5%");
+      } else if (width <= 1400) {
+        root.style.setProperty("--shell-padding-x", "40px");
       } else {
         root.style.setProperty("--shell-padding-x", "140px");
       }
